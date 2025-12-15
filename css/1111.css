@@ -127,7 +127,7 @@ nav {
 /* ==================================== */
 #home {
     background: #333;
-    background-image: url("/images/P1_01\ BWG.png");
+    background-image: url("images/P1_01\ BWG.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -232,15 +232,15 @@ nav {
 
 /* 設置背景圖片 URL */
 #about {
-    background-image: url("/images/P2_01\ BWG.png");
+    background-image: url("images/P2_01\ BWG.png");
 }
 
 #portfolio {
-    background-image: url("/images/P3_01BW.png");
+    background-image: url("images/P3_01BW.png");
 }
 
 #contact {
-    background-image: url("/images/P4_01\ BW.png");
+    background-image: url("images/P4_01\ BW.png");
 }
 
 /* 封面 LOGO 圖片尺寸與響應式控制 */
