@@ -125,9 +125,8 @@ nav {
 /* ==================================== */
 /* 3. 首頁區塊 (#home) */
 /* ==================================== */
-/* 修正後的正確相對路徑 */
 #home {
-    /* ... 其他樣式 ... */
+
     background-image: url("../images/P1_01\ BWG.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -148,7 +147,6 @@ nav {
     flex-direction: column;
     align-items: center;
     position: relative;
-    /* 確保聲音按鈕可以相對定位 */
 }
 
 /* 主 LOGO 圖片尺寸 */
@@ -233,15 +231,15 @@ nav {
 
 /* 設置背景圖片 URL */
 #about {
-    background-image: url("images/P2_01\ BWG.png");
+    background-image: url("../images/P2_01\ BWG.png");
 }
 
 #portfolio {
-    background-image: url("images/P3_01BW.png");
+    background-image: url("../images/P3_01BW.png");
 }
 
 #contact {
-    background-image: url("images/P4_01\ BW.png");
+    background-image: url("../images/P4_01\ BW.png");
 }
 
 /* 封面 LOGO 圖片尺寸與響應式控制 */
