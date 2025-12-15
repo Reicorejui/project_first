@@ -125,9 +125,10 @@ nav {
 /* ==================================== */
 /* 3. 首頁區塊 (#home) */
 /* ==================================== */
+/* 修正後的正確相對路徑 */
 #home {
-    background: #333;
-    background-image: url("images/P1_01\ BWG.png");
+    /* ... 其他樣式 ... */
+    background-image: url("../images/P1_01\ BWG.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
