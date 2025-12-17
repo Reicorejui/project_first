@@ -8,22 +8,36 @@
     <link rel="stylesheet" href="./css/1111.css">
 
     <style>
-        /* 這裡放一些簡單的補強，確保 Logo 不會失控 */
-        .logo-main {
-            max-width: 300px; /* 限制 Logo 寬度，您可以自行調整數值 */
+        /* 讓 Logo 不要變超大 */
+        .logo-main, .hero-logo-container img {
+            width: 300px !important; /* 強制控制寬度 */
             height: auto;
             display: block;
             margin: 0 auto;
         }
+
+        /* 確保圖片都乖乖待在框框裡 */
         img {
             max-width: 100%;
             height: auto;
         }
-        /* 恢復原本導覽列的簡單樣式 (如果 1111.css 沒寫到) */
+
+        /* 修正導覽列（如果原本是橫的現在變直的） */
+        .main-nav {
+            text-align: center;
+            padding: 20px 0;
+        }
         .main-nav a {
             margin: 0 15px;
             text-decoration: none;
-            color: inherit;
+            color: #333;
+            display: inline-block;
+        }
+
+        /* 讓每個區塊置中 */
+        section {
+            text-align: center;
+            padding: 50px 0;
         }
     </style>
 </head>
@@ -42,51 +56,46 @@
     </nav>
 </header>
 
-<section id="home">
-    <div class="hero-logo-container">
-        <img src="./images/LOGO12.1-02.png" alt="REJUI Main Logo" class="logo-main">
-    </div>
-</section>
+<main>
+    <section id="home">
+        <div class="hero-logo-container">
+            <img src="./images/LOGO12.1-02.png" alt="Main Logo" class="logo-main">
+        </div>
+    </section>
 
-<section id="rejui8">
-    <img src="./images/rejui-DESIGN PHILOSOPHY.png" alt="">
-    <img src="./images/rejui-BRAND IDENTITY.png" alt="">
-</section>
+    <section id="rejui8">
+        <img src="./images/rejui-DESIGN PHILOSOPHY.png" alt="">
+        <img src="./images/rejui-BRAND IDENTITY.png" alt="">
+    </section>
 
-<section id="about">
-    <div class="hero-logo-img">
-        <img src="./images/word-white_logo.png" alt="REJUI Logo">
-    </div>
-</section>
+    <section id="about2">
+        <img src="./images/about me.png" alt="">
+    </section>
 
-<section id="about2">
-    <img src="./images/about me.png" alt="">
-</section>
+    <section id="portfolio2">
+        <h2>JAPAN</h2>
+        <img src="./images/P1_01BWG.png" alt="">
+        <img src="./photo_japan/japan_1.png" alt="">
+    </section>
 
-<section id="portfolio2">
-    <h2>JAPAN</h2>
-    <img src="./images/P1_01BWG.png" alt="">
-    <img src="./photo_japan/japan_1.png" alt="">
-</section>
+    <section id="portfolio3">
+        <h2>EUROPE</h2>
+        <img src="./photo_europe/nice/nice (5).jpg" alt="">
+    </section>
 
-<section id="portfolio3">
-    <h2>EUROPE</h2>
-    <img src="./photo_europe/nice/nice (5).jpg" alt="">
-</section>
-
-<section id="contact2">
-    <div class="content_wrap">
+    <section id="contact2">
         <h1>CONTACT</h1>
-        <h3>CHIU, JUI-TING</h3>
         <p>Email: hirai1008@gmail.com</p>
         <div class="social-icons">
-            <a href="https://www.instagram.com/reico.whispers"><img src="./images/icon/Icon_2.png" alt="IG"></a>
+            <a href="https://www.instagram.com/reico.whispers">
+                <img src="./images/icon/Icon_2.png" alt="Instagram" style="width: 40px;">
+            </a>
         </div>
-    </div>
-</section>
+    </section>
+</main>
 
 <footer>
-    <p>copyright © 2025 REJUI 8.com</p>
+    <p>© 2025 REJUI 8</p>
 </footer>
 
 </body>
