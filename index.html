@@ -8,37 +8,64 @@
     <link rel="stylesheet" href="./css/1111.css">
 
     <style>
-        /* 讓 Logo 不要變超大 */
-        .logo-main, .hero-logo-container img {
-            width: 300px !important; /* 強制控制寬度 */
+        /* --- 救回排版的強制設定 --- */
+        .logo-main {
+            max-width: 280px; 
             height: auto;
             display: block;
             margin: 0 auto;
         }
 
-        /* 確保圖片都乖乖待在框框裡 */
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        /* 修正導覽列（如果原本是橫的現在變直的） */
-        .main-nav {
-            text-align: center;
-            padding: 20px 0;
-        }
-        .main-nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #333;
+        /* --- 手寫下拉選單 (不靠 Bootstrap) --- */
+        .dropdown {
+            position: relative;
             display: inline-block;
         }
-
-        /* 讓每個區塊置中 */
-        section {
-            text-align: center;
-            padding: 50px 0;
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1000;
         }
+        .dropdown-content a {
+            color: black !important;
+            padding: 12px 16px;
+            display: block;
+            text-align: left;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* --- 手寫輪播 (不靠 Bootstrap) --- */
+        .custom-carousel {
+            position: relative;
+            max-width: 1000px;
+            margin: auto;
+            overflow: hidden;
+        }
+        .carousel-slide {
+            display: none; /* 預設隱藏所有圖 */
+        }
+        .carousel-slide img {
+            width: 100%;
+        }
+        .active-slide {
+            display: block; /* 只顯示當前圖片 */
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            padding: 16px;
+            color: white;
+            background: rgba(0,0,0,0.5);
+            user-select: none;
+            text-decoration: none;
+        }
+        .next { right: 0; }
     </style>
 </head>
 <body>
@@ -47,56 +74,69 @@
     <nav>
         <div class="main-nav">
             <a href="#home">HOME</a>
-            <a href="#rejui8">REJUI 8</a>
+            
+            <div class="dropdown">
+                <a href="#">REJUI 8 ▾</a>
+                <div class="dropdown-content">
+                    <a href="#rejui8">BRAND IDENTITY</a>
+                    <a href="#rejui82">DESIGN PHILOSOPHY</a>
+                </div>
+            </div>
+
             <a href="#about2">ABOUT</a>
             <a href="blog.html">BLOG</a>
-            <a href="#portfolio2">PORTFOLIO</a>
+
+            <div class="dropdown">
+                <a href="#">PORTFOLIO ▾</a>
+                <div class="dropdown-content">
+                    <a href="#portfolio2">JAPAN</a>
+                    <a href="#portfolio3">EUROPE</a>
+                    <a href="#portfolio4">TAIWAN</a>
+                </div>
+            </div>
+
             <a href="#contact2">CONTACT</a>
         </div>
     </nav>
 </header>
 
-<main>
-    <section id="home">
-        <div class="hero-logo-container">
-            <img src="./images/LOGO12.1-02.png" alt="Main Logo" class="logo-main">
+<section id="home">
+    <div class="hero-logo-container">
+        <img src="./images/LOGO12.1-02.png" alt="REJUI Logo" class="logo-main">
+    </div>
+</section>
+
+<section id="portfolio2">
+    <div class="custom-carousel" id="carousel1">
+        <div class="carousel-slide active-slide">
+            <img src="./images/P1_01BWG.png" alt="日本 1">
         </div>
-    </section>
-
-    <section id="rejui8">
-        <img src="./images/rejui-DESIGN PHILOSOPHY.png" alt="">
-        <img src="./images/rejui-BRAND IDENTITY.png" alt="">
-    </section>
-
-    <section id="about2">
-        <img src="./images/about me.png" alt="">
-    </section>
-
-    <section id="portfolio2">
-        <h2>JAPAN</h2>
-        <img src="./images/P1_01BWG.png" alt="">
-        <img src="./photo_japan/japan_1.png" alt="">
-    </section>
-
-    <section id="portfolio3">
-        <h2>EUROPE</h2>
-        <img src="./photo_europe/nice/nice (5).jpg" alt="">
-    </section>
-
-    <section id="contact2">
-        <h1>CONTACT</h1>
-        <p>Email: hirai1008@gmail.com</p>
-        <div class="social-icons">
-            <a href="https://www.instagram.com/reico.whispers">
-                <img src="./images/icon/Icon_2.png" alt="Instagram" style="width: 40px;">
-            </a>
+        <div class="carousel-slide">
+            <img src="./photo_japan/japan_1.png" alt="日本 2">
         </div>
-    </section>
-</main>
+        <a class="prev" onclick="moveSlide(-1, 'carousel1')">&#10094;</a>
+        <a class="next" onclick="moveSlide(1, 'carousel1')">&#10095;</a>
+    </div>
+</section>
 
-<footer>
-    <p>© 2025 REJUI 8</p>
-</footer>
+<script>
+    // 手寫輪播邏輯
+    function moveSlide(n, carouselId) {
+        let slides = document.querySelectorAll(`#${carouselId} .carousel-slide`);
+        let activeIdx = 0;
+        
+        slides.forEach((slide, index) => {
+            if (slide.classList.contains('active-slide')) activeIdx = index;
+            slide.classList.remove('active-slide');
+        });
+
+        activeIdx += n;
+        if (activeIdx >= slides.length) activeIdx = 0;
+        if (activeIdx < 0) activeIdx = slides.length - 1;
+        
+        slides[activeIdx].classList.add('active-slide');
+    }
+</script>
 
 </body>
 </html>
