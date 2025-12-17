@@ -8,7 +8,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, "PingFang TC", "Microsoft JhengHei", sans-serif;
     scroll-behavior: smooth;
 }
 
@@ -32,6 +32,13 @@ body {
 section {
     height: 100vh;
     padding: 80px;
+}
+
+/* 確保所有圖片都能在小螢幕(手機)上縮小。 */
+img {
+    max-width: 100%; /* 確保圖片寬度不超過其父容器 */
+    height: auto;    /* 自動調整高度，保持比例 */
+    box-sizing: border-box; /* 確保 padding/border 不影響寬度計算 */
 }
 
 /* ==================================== */
@@ -80,7 +87,7 @@ nav {
 }
 
 /* ------------------------------------ */
-/* 修正：下拉選單 (Dropdown) 樣式覆蓋 - 確保下拉選單水平排列 */
+/* 下拉選單 (Dropdown) 樣式覆蓋 - 確保下拉選單水平排列 */
 /* ------------------------------------ */
 .main-nav .dropdown {
     display: inline-block;
@@ -117,7 +124,7 @@ nav {
 }
 
 .dropdown-item:hover {
-    background-color: #ffcc00;
+    background-color: #000000;
     color: black;
 }
 
@@ -126,8 +133,8 @@ nav {
 /* 3. 首頁區塊 (#home) */
 /* ==================================== */
 #home {
-
-    background-image: url("../images/P1_01\ BWG.png");
+    background: #333;
+    background-image: url("/images/P1_01BWG.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -147,6 +154,7 @@ nav {
     flex-direction: column;
     align-items: center;
     position: relative;
+    /* 確保聲音按鈕可以相對定位 */
 }
 
 /* 主 LOGO 圖片尺寸 */
@@ -170,7 +178,6 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* 確保文字不會跟背景一樣顏色 */
     color: white;
 }
 
@@ -231,15 +238,15 @@ nav {
 
 /* 設置背景圖片 URL */
 #about {
-    background-image: url("../images/P2_01 BWG.png");
+    background-image: url("/images/P2_01BWG.png");
 }
 
 #portfolio {
-    background-image: url("../images/P3_01BW.png");
+    background-image: url("/images/P3_01BW.png");
 }
 
 #contact {
-    background-image: url("../images/P4_01 BW.png");
+    background-image: url("/images/P4_01BW.png");
 }
 
 /* 封面 LOGO 圖片尺寸與響應式控制 */
@@ -280,13 +287,11 @@ nav {
     /* <<<--- 新增 #portfolio3Carousel */
     width: 90%;
     max-width: 1000px;
-    height: 82vh;
+    height: 80.7vh;
     /* *** 新增白色外框 *** */
     border: 3px solid white; 
     /* 5px 是邊框的粗細，solid 是實線，white 是顏色 */
 }
-
-
 
 /* 修正圖片被拉伸或變形的問題：所有圖片共用此樣式 */
 .carousel-img-fit {
@@ -311,9 +316,14 @@ nav {
 /* ==================================== */
 
 #contact2 {
-    background-color: #2b2b2b; /* 保持深色背景 */
+    background-color: #2b2b2b;
     color: white;
-    /* 確保 #contact2 仍然是 100vh，並且內容置中 */
+    
+    /* 啟用定位與隱藏溢出 */
+    position: relative; 
+    z-index: 1; 
+    overflow: hidden; 
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -321,23 +331,84 @@ nav {
     height: 100vh;
 }
 
-/* 內容容器：控制左右欄的間距 */
+/* 確保內容在動畫上方 */
 .content_wrap {
+    z-index: 5; 
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* 讓內容從頂部對齊 */
-    gap: 100px; /* 增加左右兩欄的間距 */
-    width: 80%; /* 限制最大寬度 */
+    align-items: flex-start; 
+    gap: 100px; 
+    width: 80%; 
     max-width: 1200px;
+}
+
+/* ------------------------------------ */
+/* 動態圓圈 1 (::before) */
+/* ------------------------------------ */
+#contact2::before {
+    content: ""; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; 
+    border: 1px solid rgba(255, 255, 255, 0.5); /* 白色脈衝 */
+    z-index: 2; 
+    
+    animation-name: pulseAnimation;
+    animation-duration: 5s; 
+    animation-timing-function: ease-out; 
+    animation-delay: 0s;
+    animation-iteration-count: infinite; 
+}
+
+/* ------------------------------------ */
+/* 動態圓圈 2 (::after) - 錯開時間 */
+/* ------------------------------------ */
+#contact2::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 1px solid rgba(138, 219, 156, 0.4); /* 橘色脈衝 */
+    z-index: 2;
+    
+    animation-name: pulseAnimation;
+    animation-duration: 5s;
+    animation-timing-function: ease-out;
+    animation-delay: 2.5s; /* 延遲一半時間 */
+    animation-iteration-count: infinite;
+}
+
+/* ------------------------------------ */
+/* 動畫定義 (可放在檔案最前面或最後面) */
+/* ------------------------------------ */
+@keyframes pulseAnimation {
+    0% {
+        transform: translate(-50%, -50%) scale(0.1); 
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(3); 
+        opacity: 0;
+    }
 }
 
 /* 左側：聯繫資訊 */
 .contact-left {
-    text-align: left;
+    text-align: center;
     padding: 20px;
     /* 可以選擇在這裡加入您的主題色背景 */
-    background-color: #ffffff; /* 使用您的主題色 */
-    color: black;
+    /* background-color: #ffffff; 使用您的主題色 */
+    color: #ffffff;
     padding: 50px;
     width: 400px;
     /* 移除固定的 height: 500px，讓高度自適應 */
@@ -346,6 +417,7 @@ nav {
 .contact-left .contact-title {
     font-size: 48px;
     margin-bottom: 5px;
+
 }
 
 .contact-left .contact-name {
@@ -362,7 +434,7 @@ nav {
 /* 右側：社交媒體圖標 */
 .contact-right {
     text-align: left;
-    padding: 20px;
+    padding: 30px;
     color: white; /* 確保文字在深色背景中可見 */
 }
 
