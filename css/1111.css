@@ -1,5 +1,5 @@
 /* ==================================== */
-/* 1. 基礎重置與排版 (Reset & Layout) */
+/* 1. 排版 (Reset & Layout) */
 /* ==================================== */
 * {
     margin: 0;
@@ -13,7 +13,7 @@ body {
 }
 
 /* ------------------------------------ */
-/* 禁止網頁文字被反白選取的樣式 */
+/* 禁止反白 */
 /* ------------------------------------ */
 body {
     user-select: none;
@@ -112,7 +112,6 @@ nav {
 /* ==================================== */
 #home {
     background: #333;
-    /* 修正路徑：加上 . 代表從當前資料夾出發 */
     background-image: url("../images/P1_01BWG.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -199,7 +198,6 @@ nav {
     display: block;
 }
 
-/* 修正背景圖片 URL 路徑 */
 #about {
     background-image: url("../images/P2_01BWG.png");
 }
