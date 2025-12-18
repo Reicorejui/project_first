@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>利特盒 行銷企劃 | REJUI 8</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #000;
+            font-family: "Helvetica Neue", Helvetica, Arial, "PingFang TC", "Microsoft JhengHei", sans-serif;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.8;
+        }
+
+        .top-nav {
+            position: fixed;
+            top: 0;
+            padding: 30px 50px;
+            z-index: 9999;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            background: rgba(255,255,255,0.9);
+        }
+
+        .top-nav a {
+            text-decoration: none;
+            color: #000;
+            letter-spacing: 2px;
+            font-size: 14px;
+        }
+
+        /* 標題區 */
+        .project-hero {
+            margin-top: 120px;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .project-category {
+            font-size: 12px;
+            letter-spacing: 4px;
+            color: #888;
+            text-transform: uppercase;
+        }
+
+        .project-title {
+            font-size: 36px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin: 20px 0;
+        }
+
+        /* 專案資訊欄 */
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 50px;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .meta-item span {
+            display: block;
+            font-size: 11px;
+            color: #aaa;
+            letter-spacing: 1px;
+        }
+
+        .meta-item strong {
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        /* 內容區塊 */
+        .content-section {
+            max-width: 900px;
+            margin: 0 auto 80px;
+            padding: 0 20px;
+        }
+
+        .section-label {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            border-left: 3px solid #000;
+            padding-left: 15px;
+            text-transform: uppercase;
+        }
+
+        /* 圖片容器 */
+        .img-box {
+            background-color: #f7f7f7;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .img-box img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* 預算分配樣式 */
+        .budget-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .budget-card {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .budget-percent {
+            font-size: 24px;
+            font-weight: 300;
+            color: #333;
+        }
+
+        footer {
+            padding: 60px 0;
+            text-align: center;
+            font-size: 11px;
+            color: #aaa;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <a href="index.html">HOME</a>
+    </nav>
+
+    <article>
+        <header class="project-hero">
+            <span class="project-category">Market Strategy & Marketing Blueprint</span>
+            <h1 class="project-title">利特盒 (Litter Box) 智慧行銷藍圖</h1>
+            
+            <div class="project-meta">
+                <div class="meta-item"><span>BRAND</span><strong>利特盒 / Ritt</strong></div>
+                <div class="meta-item"><span>CORE</span><strong>科技 X 愛 X 陪伴</strong></div>
+                <div class="meta-item"><span>BUDGET</span><strong>NT$ 5,000,000</strong></div>
+            </div>
+        </header>
+
+        <section class="content-section">
+            <div class="section-label">Brand Story / 品牌起源</div>
+            <div class="row align-items-center">
+                <div class="col-md-5">
+                    <img src="./images/maeketing_1.png" class="img-fluid" alt="Brand Story">
+                </div>
+                <div class="col-md-7">
+                    <p>
+                        源於對阿茲海默症奶奶與老貓的深切關懷。為減輕奶奶的照護負擔，研發出具備 AI 監測功能的智慧貓砂盆。
+                        這不只是一個科技產品，更是維持奶奶與貓咪情感連結的溫暖工具。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="section-label">Market Analysis / 市場洞察</div>
+            <p>隨著寵物家庭激增與智慧家電普及，消費者對高品質、科技養貓的需求顯著攀升。</p>
+            <div class="img-box">
+                <img src="./images/maeketing_2.png" alt="Consumer Pain Points">
+            </div>
+            <ul>
+                <li><strong>健康監控難：</strong> 排泄異常難以即時發現。</li>
+                <li><strong>安全黑洞：</strong> 傳統自動設備存在夾傷貓咪的風險。</li>
+                <li><strong>環境維護：</strong> 異味控制與貓砂飛散是主要困擾。</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <div class="section-label">Market Positioning / 競爭策略</div>
+            <div class="img-box">
+                <img src="./images/maeketing_3.png" alt="Market Positioning Map">
+            </div>
+            <p>利特盒在市場中定位為「高功能、高品質」的頂尖產品，與平價產品拉開差距。</p>
+            <ul>
+                <li>核心技術：AI 健康監測、多貓辨識、絕對安全防夾。</li>
+                <li>價格策略：定價 $25,000，早鳥方案 $22,700。</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <div class="section-label">Integrated Marketing / 500 萬預算分配</div>
+            <p>採用「認知 → 興趣 → 信任 → 體驗 → 購買」的消費者決策旅程進行佈署。</p>
+            <div class="budget-grid">
+                <div class="budget-card">
+                    <span class="budget-percent">40%</span>
+                    <p><strong>KOL 體驗行銷</strong><br>中微型網紅 14 天試用計畫，建立信任感。</p>
+                </div>
+                <div class="budget-card">
+                    <span class="budget-percent">20%</span>
+                    <p><strong>社群內容經營</strong><br>IG/FB 持續性內容產出與精準廣告投放。</p>
+                </div>
+                <div class="budget-card">
+                    <span class="budget-percent">20%</span>
+                    <p><strong>寵物展覽體驗</strong><br>實體展位試用，增加與潛在客群的接觸。</p>
+                </div>
+                <div class="budget-card">
+                    <span class="budget-percent">20%</span>
+                    <p><strong>CSR 與案例分享</strong><br>品牌公益活動，強化正面社會形象。</p>
+                </div>
+            </div>
+        </section>
+    </article>
+
+    <footer>
+        <p>copyright © 2025 REJUI 8.com</p>
+    </footer>
+
+</body>
+</html>
